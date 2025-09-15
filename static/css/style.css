@@ -1,0 +1,167 @@
+/* Custom styles for user management app */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* Form styling */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+  padding: 1.5rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* Custom validation styling */
+.custom-validation {
+  position: relative;
+}
+
+.validation-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #28a745;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.form-control.is-valid {
+  border-color: #28a745;
+  padding-right: 2.5rem;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  padding-right: 2.5rem;
+}
+
+.form-control.is-valid:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-control.is-invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-feedback {
+  display: block;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Button styling */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+/* Users list styling */
+.card-title {
+  color: #495057;
+  font-weight: 600;
+}
+
+.card-text a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.card-text a:hover {
+  text-decoration: underline;
+}
+
+/* Icons */
+.bi {
+  font-size: inherit;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .form-container {
+    margin: 0;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+/* Loading and success states */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.alert-info {
+  background-color: #e7f3ff;
+  color: #0c5460;
+}
+
+/* Animation for form validation */
+.form-control {
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.validation-icon {
+  transition: opacity 0.15s ease-in-out;
+}
+
+/* Custom form help text */
+.form-text {
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+/* User cards layout */
+.row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.col-md-6, .col-lg-4 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}

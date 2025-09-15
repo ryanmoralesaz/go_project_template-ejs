@@ -1,0 +1,50 @@
+package forms
+
+type FormInputProps struct {
+	ID           string
+	Name         string
+	Label        string
+	Type         string
+	Pattern      string
+	Icon         string
+	Autocomplete string
+	HelpText     string
+	Required     bool
+	Value        string
+}
+
+templ FormInput(props FormInputProps) {
+	<div class="row">
+		<div class="mb-3">
+			<label for={ props.ID } class="form-label">
+				<i class={ "bi bi-" + props.Icon + " me-1" }></i>
+				{ props.Label }
+				if props.Required {
+					<span class="text-danger">*</span>
+				}
+			</label>
+			<div class="custom-validation">
+				<input
+					value={ props.Value }
+					type={ props.Type }
+					class="form-control"
+					id={ props.ID }
+					name={ props.Name }
+					if props.Pattern != "" {
+						pattern={ props.Pattern }
+					}
+					aria-describedby={ props.ID + "Help" }
+					if props.Autocomplete != "" {
+						autocomplete={ props.Autocomplete }
+					}
+					if props.Required {
+						required
+					}
+				/>
+				<i class="bi bi-check-circle-fill validation-icon" style="display: none"></i>
+				<div class="invalid-feedback" id={ props.ID + "Error" }></div>
+			</div>
+			<div id={ props.ID + "Help" } class="form-text">{ props.HelpText }</div>
+		</div>
+	</div>
+}

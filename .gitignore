@@ -30,3 +30,16 @@ tmp/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Server binaries (your main executable)
+server
+/server
+bin/
+build/
+
+# Development tools
+.air.toml
+# Environment files
+.env
+.env.local
+.env.production

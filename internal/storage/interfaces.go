@@ -1,6 +1,6 @@
 package storage
 
-import "user-database-go/internal/models"
+import "user-management-go/internal/models"
 
 type UserStorage interface {
 	GetAll() ([]*models.User, error)

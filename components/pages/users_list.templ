@@ -1,0 +1,61 @@
+package pages
+
+import "user-management-go/internal/models"
+
+templ UsersList(users []*models.User) {
+	<div class="container">
+		<h1 class="mb-4">Users List</h1>
+
+		if len(users) > 0 {
+			<div class="row">
+				for _, user := range users {
+					<div class="col-md-6 col-lg-4 mb-3">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">
+									<i class="bi bi-person me-2"></i>
+									{ user.FirstName } { user.LastName }
+								</h5>
+								<p class="card-text">
+									<i class="bi bi-envelope me-2"></i>
+									<a href={ templ.URL("mailto:" + user.Email) }>{ user.Email }</a>
+								</p>
+								<p class="card-text">
+									<i class="bi bi-telephone me-2"></i>
+									<a href={ templ.URL("tel:" + user.Phone) }>{ user.Phone }</a>
+								</p>
+								<p class="card-text">
+									<small class="text-muted">
+										Created: { user.CreatedAt.Format("Jan 2, 2006 3:04 PM") }
+									</small>
+								</p>
+								<div class="d-flex justify-content-between">
+									<button
+										class="btn btn-danger btn-sm"
+										data-user-id={ user.ID }
+										onclick="deleteUser(this.getAttribute('data-user-id'))"
+									>
+										<i class="bi bi-trash me-1"></i>
+										Delete
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		} else {
+			<div class="alert alert-info" role="alert">
+				<i class="bi bi-info-circle me-2"></i>
+				No users found. <a href="/form" class="alert-link">Add the first user</a>!
+			</div>
+		}
+
+		<div class="mt-4">
+			<a href="/form" class="btn btn-primary">
+				<i class="bi bi-person-plus me-2"></i>
+				Add New User
+			</a>
+		</div>
+	</div>
+}

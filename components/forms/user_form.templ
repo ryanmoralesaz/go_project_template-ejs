@@ -1,0 +1,80 @@
+package forms
+
+templ UserForm() {
+	<div class="form-container">
+		<div class="card shadow">
+			<div class="card-header bg-primary text-white">
+				<h2 class="card-title mb-0">
+					<i class="bi bi-android2 me-2"></i>
+					User Registration Form
+				</h2>
+			</div>
+			<div class="card-body">
+				<form id="registrationForm">
+					@FormInput(FormInputProps{
+						ID:           "firstName",
+						Name:         "firstName",
+						Label:        "First Name",
+						Type:         "text",
+						Pattern:      "^[A-Za-z]{2,50}$",
+						Icon:         "person",
+						Autocomplete: "given-name",
+						HelpText:     "Only letters, 2-50 characters",
+						Required:     true,
+						Value:        "",
+					})
+
+					@FormInput(FormInputProps{
+						ID:           "lastName",
+						Name:         "lastName",
+						Label:        "Last Name",
+						Type:         "text",
+						Pattern:      "^[A-Za-z]{2,50}$",
+						Icon:         "person",
+						Autocomplete: "family-name",
+						HelpText:     "Only letters, 2-50 characters",
+						Required:     true,
+						Value:        "",
+					})
+
+					@FormInput(FormInputProps{
+						ID:           "email",
+						Name:         "email",
+						Label:        "Email Address",
+						Type:         "email",
+						Pattern:      "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$",
+						Icon:         "envelope",
+						Autocomplete: "email",
+						HelpText:     "Enter a valid email address",
+						Required:     true,
+						Value:        "",
+					})
+
+					@FormInput(FormInputProps{
+						ID:           "phone",
+						Name:         "phone",
+						Label:        "Phone Number",
+						Type:         "tel",
+						Pattern:      "^[0-9]{3}-[0-9]{3}-[0-9]{4}$",
+						Icon:         "telephone",
+						Autocomplete: "tel",
+						HelpText:     "Format: 123-456-7890",
+						Required:     true,
+						Value:        "",
+					})
+
+					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+						<button type="reset" class="btn btn-outline-secondary me-md-2">
+							<i class="bi bi-arrow-clockwise me-1"></i>
+							Reset Form
+						</button>
+						<button class="btn btn-primary" id="submitBtn" type="submit">
+							<i class="bi bi-person-check me-1"></i>
+							Create Account
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+}
