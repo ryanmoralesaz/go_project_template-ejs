@@ -1,45 +1,92 @@
-# Binaries for programs and plugins
+# macOS metadata files
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Go specific
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
-
-# Test binary, built with `go test -c`
 *.test
-
-# Output of the go coverage tool
 *.out
-
-# Go workspace file
 go.work
+
+# Go build output
+/bin/
+bin/
+/build/
+build/
+/pkg/
+/vendor/
+
+# Server binaries
+server
+/server
+
+# Go coverage
+*.coverprofile
+coverage.txt
+coverage.html
 
 # Generated templ files
 *_templ.go
 
-# Data files (optional - you might want to track the structure)
-data/*.json
+# Deno specific
+.deno/
+deno.lock
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+.env.production
+*.key
+*.pem
+secrets.json
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
 
 # Air temp files
 tmp/
+.air.toml
 
-# IDE files
-.vscode/
-.idea/
+# Data files (optional - you might want to track the structure)
+data/*.json
+
+# Build and dist
+/dist/
+*.wasm
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
 
 # OS files
-.DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Server binaries (your main executable)
-server
-/server
-bin/
-build/
-
-# Development tools
-.air.toml
-# Environment files
-.env
-.env.local
-.env.production
+# Temporary files
+*.tmp
+*.temp
+/tmp/
